@@ -1,5 +1,4 @@
-# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Adri\Desktop\zavrsni_rad.sql
-
+# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Adri\Desktop\Git\Zavrsni_rad\zavrsni_rad.sql
 drop database if exists zavrsni_rad;
 create database zavrsni_rad;
 
@@ -40,6 +39,7 @@ create table tretman_stanje (
 create table klijent (
     sifra int not null primary key auto_increment,
     ime varchar (50) not null,
+    prezime varchar (50) not null,
     kontakt_tel char (14) not null,
     e_mail varchar (100)
 );
@@ -69,4 +69,5 @@ references klijent (sifra);
 
 alter table klijent_stanje add foreign key (stanje)
 references stanje (sifra);
+
 
